@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class CompositeNumbers {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter the starting number: ");
+        int a = input.nextInt();
+
+        System.out.print("Enter the ending number: ");
+        int b = input.nextInt();
+
+        for (int i = a + 1; i < b; i++) {  // Optimized outer loop condition
+            int c = 0;
+            for (int j = 1; j * j <= i; j++) {  // Optimized inner loop condition
+                if (i % j == 0) {
+                    c++;
+                    if (j * j != i) { // Count paired divisor only once
+                        c++;
+                    }
+                }
+            }
+            if (c > 2) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+}
