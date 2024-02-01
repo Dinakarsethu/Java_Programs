@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class FindCharacterIndex {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String str = input.nextLine();
+
+        System.out.print("Enter a character to find: ");
+        char c = input.next().charAt(0);
+
+        int index = str.indexOf(c);  // Use the built-in indexOf method for efficiency
+
+        if (index != -1) {
+            System.out.println(c + " is found in string at index: " + (index + 1));
+        } else {
+            System.out.println("Character not found");
+        }
+    }
+}
