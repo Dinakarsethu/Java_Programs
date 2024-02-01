@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class InterestCalculator {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter the principal amount: ");
+        int principal = input.nextInt();
+
+        System.out.print("Enter the number of years: ");
+        int years = input.nextInt();
+
+        System.out.print("Are you a senior citizen? (y/n): ");
+        char isSenior = input.next().charAt(0);
+
+        double interestRate;
+
+        if (isSenior == 'y') {
+            interestRate = 0.12; // 12% interest for senior citizens
+        } else {
+            interestRate = 0.1;  // 10% interest for non-senior citizens
+        }
+
+        double interest = (principal * years * interestRate) / 100;
+
+        System.out.println("Interest: " + interest);
+    }
+}
