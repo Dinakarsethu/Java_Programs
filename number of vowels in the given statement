@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class VowelCounter {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter a name: ");
+        String name = input.nextLine();
+
+        int vowelCount = 0;
+
+        for (int i = 0; i < name.length(); i++) {
+            char ch = name.charAt(i);
+            if (isVowel(ch)) {
+                vowelCount++;
+            }
+        }
+
+        System.out.println("The name '" + name + "' has " + vowelCount + " vowels.");
+    }
+
+    public static boolean isVowel(char ch) {
+        ch = Character.toLowerCase(ch); // Convert to lowercase for case-insensitive comparison
+        return "aeiou".indexOf(ch) != -1;
+    }
+}
