@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class BinaryToDecimalOctal {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a binary number: ");
+        String binaryString = scanner.nextLine();
+
+        // Convert binary to decimal
+        int decimal = Integer.parseInt(binaryString, 2);
+        System.out.println("Decimal equivalent: " + decimal);
+
+        // Convert binary to octal
+        String octalString = Integer.toOctalString(Integer.parseInt(binaryString, 2));
+        System.out.println("Octal equivalent: " + octalString);
+    }
+}
