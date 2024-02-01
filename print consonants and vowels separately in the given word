@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class SeparateVowelsConsonants {
+   public static void main(String[] args) {
+       Scanner input = new Scanner(System.in);
+
+       System.out.print("Enter a name: ");
+       String name = input.nextLine();
+
+       String vowels = "";
+       String consonants = "";
+
+       for (char ch : name.toCharArray()) {
+           if (isVowel(ch)) {
+               vowels += ch;
+           } else {
+               consonants += ch;
+           }
+       }
+
+       System.out.println("Consonants in '" + name + "': " + consonants);
+       System.out.println("Vowels in '" + name + "': " + vowels);
+   }
+
+   public static boolean isVowel(char ch) {
+       ch = Character.toLowerCase(ch); // Convert to lowercase for case-insensitive comparison
+       return "aeiou".indexOf(ch) != -1;
+   }
+}
